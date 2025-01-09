@@ -18,4 +18,4 @@ app.include_router(user_router, prefix="/users", tags=["Users"])
 
 @app.get("/")
 async def root():
-    return("message: Welcome to the FastAPI backend!")
+    return("message: Welcome to the FastAPI backend")
