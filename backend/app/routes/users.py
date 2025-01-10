@@ -1,17 +1,12 @@
 from fastapi import APIRouter, HTTPException
-from passlib.context import CryptContext
 from models.user import User
 from utils.database import Database
+from utils.password_utils import hash_password
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 router = APIRouter()
 
-
-def hash_password(password: str) -> str:
-    return pwd_context.hash(password)
-
-@router.post("/create_user/")
+@router.post("/signup/")
 async def create_user(user: User):
     users_collection = Database.db["users"]    
 

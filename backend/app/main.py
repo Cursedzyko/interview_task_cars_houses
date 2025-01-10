@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from utils.database import connect_to_mongo, close_mongo_connection
 from routes.users import router as user_router
+from routes.login import login_router
+from routes.admin import admin_router
 
 
 app = FastAPI()
@@ -14,7 +16,11 @@ async def startup_event():
 async def shutdown_event():
     await close_mongo_connection()
 
-app.include_router(user_router, prefix="/users", tags=["Users"])
+app.include_router(user_router, tags=["Registration"])
+
+app.include_router(login_router, tags=["Authentication"])
+
+app.include_router(admin_router, tags=["Admin"])
 
 @app.get("/")
 async def root():
