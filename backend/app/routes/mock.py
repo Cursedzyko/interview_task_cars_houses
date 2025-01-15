@@ -4,7 +4,6 @@ from utils.auth import get_current_user
 
 mock_router = APIRouter()
 
-@mock_router.post("/add_mock_data/")
 async def add_mock_data():
     cars_collection = Database.db["cars"]
     house_collection = Database.db["houses"]
@@ -19,8 +18,21 @@ async def add_mock_data():
         {"address": "456 Elm St", "price": 450000, "bedrooms": 4},
     ]
     
-    await cars_collection.insert_many(cars)
-    await house_collection.insert_many(houses)
+    for car in cars:
+        existing_car = await cars_collection.find_one({"brand": car["brand"], "model": car["model"], "year": car["year"]})
+        if not existing_car:
+            await cars_collection.insert_one(car)
+            print(f"Inserted car: {car}")
+        else:
+            print(f"Car already exists: {car}")
+    
+    for house in houses:
+        existing_house = await house_collection.find_one({"address": house["address"]})
+        if not existing_house:
+            await house_collection.insert_one(house)
+            print(f"Inserted house: {house}")
+        else:
+            print(f"House already exists: {house}")
     
     return {"message" : "Mock data added successfully"}
 
