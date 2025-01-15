@@ -20,12 +20,14 @@ A full-stack web application to manage cars and houses. Built with **FastAPI** (
 ```bash
 git clone <repository_url>
 cd <repository_directory>
+```
 
 ### 2. Build & Run with Docker Compose
 Run the following command to build and start the application:
 
 ```bash
 docker-compose up --build
+```
 
 - **Frontend**: [http://localhost:3000](http://localhost:3000)
 - **Backend**: [http://localhost:8000](http://localhost:8000)
