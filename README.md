@@ -31,9 +31,7 @@ docker-compose up --build
 - **Backend**: [http://localhost:8000](http://localhost:8000)
 - **MongoDB** (on the default port `27017`).
 
-
-
-# Admin Panel and Role-Based Access Control (RBAC)
+## Admin Panel and Role-Based Access Control (RBAC)
 
 ## Overview
 This application includes an **Admin Panel** for managing users, roles, and permissions. It implements **Role-Based Access Control (RBAC)** to restrict access to features based on user roles.
