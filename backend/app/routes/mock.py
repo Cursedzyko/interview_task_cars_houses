@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
-from utils.database import Database
-from utils.auth import get_current_user
+from app.utils.database import Database
+from app.utils.auth import get_current_user
 
 mock_router = APIRouter()
 

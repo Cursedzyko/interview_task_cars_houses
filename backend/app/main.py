@@ -1,14 +1,14 @@
 from fastapi import FastAPI
-from utils.database import connect_to_mongo, close_mongo_connection
-from routes.users import router as user_router
-from routes.login import login_router
-from routes.admin import admin_router
-from routes.mock import mock_router
+from app.utils.database import connect_to_mongo, close_mongo_connection
+from app.routes.users import router as user_router
+from app.routes.login import login_router
+from app.routes.admin import admin_router
+from app.routes.mock import mock_router
 from fastapi.middleware.cors import CORSMiddleware
-from utils.database import Database
-from utils.password_utils import hash_password
-from models.user import User
-from routes.mock import add_mock_data
+from app.utils.database import Database
+from app.utils.password_utils import hash_password
+from app.models.user import User
+from app.routes.mock import add_mock_data
 import os
 from dotenv import load_dotenv
 

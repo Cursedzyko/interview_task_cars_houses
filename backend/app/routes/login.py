@@ -3,9 +3,9 @@ import os
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 from jose import jwt
-from models.user import User
-from utils.database import Database
-from utils.password_utils import verify_password
+from app.models.user import User
+from app.utils.database import Database
+from app.utils.password_utils import verify_password
 
 
 

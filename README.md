@@ -1,3 +1,38 @@
+# Cars & Houses Application
+
+A full-stack web application to manage cars and houses. Built with **FastAPI** (backend), **React** (frontend), and **MongoDB** (database).
+
+## Technologies
+- **Frontend**: React
+- **Backend**: FastAPI (Python)
+- **Database**: MongoDB
+- **Containerization**: Docker & Docker Compose
+
+---
+
+## Setup & Running
+
+### Prerequisites
+- **Docker**: [Install Docker](https://docs.docker.com/get-docker/)
+- **Docker Compose**: [Install Docker Compose](https://docs.docker.com/compose/install/)
+
+### 1. Clone the Repository
+```bash
+git clone <repository_url>
+cd <repository_directory>
+
+### 2. Build & Run with Docker Compose
+Run the following command to build and start the application:
+
+```bash
+docker-compose up --build
+
+- **Frontend**: [http://localhost:3000](http://localhost:3000)
+- **Backend**: [http://localhost:8000](http://localhost:8000)
+- **MongoDB** (on the default port `27017`).
+
+
+
 # Admin Panel and Role-Based Access Control (RBAC)
 
 ## Overview
